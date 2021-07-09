@@ -1,6 +1,6 @@
 import argparse
 from google.cloud import storage
-import os
+import os.path
 import time
 
 #Below is a Powershell command to set the environment variable for correct credentials key
@@ -34,9 +34,16 @@ if os.path.isfile("checkpoint.txt"):
         all_lines = opened_file.readlines()
         #Take the argument and take just that many lines
         modified_list = all_lines[:int(args.lineamount)]
-        print(modified_list)
-
+        #Remove newline
+        stripped_list = [item.strip("\n") for item in modified_list]
+        #Sort by length
+        sorted_list = sorted(stripped_list, key=len)
+        #Print
+        for x in sorted_list:
+            print(x)
         opened_file.close()
-
+    #Try-except just for future modifiability
     except:
         print("Something went wrong!")
+
+#This concludes second part.
