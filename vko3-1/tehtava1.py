@@ -33,8 +33,8 @@ except:
     print("Something went wrong!")
 
 #Create a bucket and upload the just created file there.
-create_a_bucket("ilkkastestbucketcp3")
+create_a_bucket("ilkkastestbucketcheckp3")
 #Why did the instructions say the file had to be named checkpoint1? Funny thing.
-upload_a_file("ilkkastestbucketcp3", "checkpoint1", "checkpoint.txt")
+upload_a_file("ilkkastestbucketcheckp3", "checkpoint1", "checkpoint.txt")
 
 #This concludes first part.
